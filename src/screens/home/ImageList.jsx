@@ -25,6 +25,9 @@ function ImageListComponent(props) {
             background:
                 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.7) 100%)',
         },
+        posterImg: {
+            width:'100%'
+        }
     }));
 
     const classes = useStyles();
@@ -33,7 +36,7 @@ function ImageListComponent(props) {
             <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
                 {props.moviesData.map((item) => (
                     <ImageListItem key={item.id}>
-                        <img src={item.poster_url} alt={item.title} />
+                        <img src={item.poster_url} alt={item.title} className={classes.posterImg}/>
                         <ImageListItemBar
                             title={item.title}
                             classes={{
