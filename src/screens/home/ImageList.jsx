@@ -1,15 +1,52 @@
 import React from 'react';
-import { Component, Fragment } from 'react';
 import { ImageList, ImageListItem, ImageListItemBar, makeStyles } from '@material-ui/core';
-import moviesData from '../../assets/moviesData.json';
-class ImageListComponent extends Component {
-    render() {
-        return (
-            <Fragment>
-                
-            </Fragment>
-        ) 
-    }
-}
+import moviesData from '../../assets/moviesData';
 
+// CSS FOR THE IMAGE LIST COMPONENTS
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: theme.palette.background.paper,
+    },
+    imageList: {
+      flexWrap: 'nowrap',
+      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+      transform: 'translateZ(0)',
+    },
+    title: {
+      // color: theme.palette.primary.light,
+      color:'#ffffff'
+    },
+    titleBar: {
+      background:
+        'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.7) 100%)',
+    },
+  }));
+
+//   Image List component
+function ImageListComponent()
+ {
+    const classes=useStyles();
+    return (
+        <div className={classes.root}>
+          <ImageList className={classes.imageList} rowHeight={250} cols={6}>
+            {moviesData.map((item) => (
+              <ImageListItem key={item.id}>
+                <img src={item.poster_url} alt={item.title} />
+                <ImageListItemBar
+                  title={item.title}
+                  classes={{
+                    root: classes.titleBar,
+                    title: classes.title,
+                  }}
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
+      );
+ }
 export default ImageListComponent;
