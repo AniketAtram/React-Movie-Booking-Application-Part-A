@@ -16,7 +16,7 @@ class Home extends Component {
                 </div>
                 {/* The single line image list */}
                 <div className="single-line-image-list">
-                    <ImageListComponent moviesData={moviesData} rowHeight={250} cols={6} wrap={'nowrap'}/>
+                    <ImageListComponent moviesData={moviesData} rowHeight={250} cols={6} wrap={'nowrap'} />
                 </div>
             </Fragment>
         )
