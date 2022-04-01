@@ -1,12 +1,11 @@
 import React from 'react';
 import { ImageList, ImageListItem, ImageListItemBar, makeStyles } from '@material-ui/core';
-import moviesData from '../../assets/moviesData';
-
 
 function ImageListComponent(props)
- {
+ {  
+    console.log(props);
     // CSS FOR THE IMAGE LIST COMPONENTS
-const useStyles = makeStyles((theme) => ({
+    const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
       flexWrap: 'wrap',
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     return (
         <div className={classes.root}>
           <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
-            {moviesData.map((item) => (
+            {props.moviesData.map((item) => (
               <ImageListItem key={item.id}>
                 <img src={item.poster_url} alt={item.title} />
                 <ImageListItemBar

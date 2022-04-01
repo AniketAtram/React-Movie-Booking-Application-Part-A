@@ -2,6 +2,7 @@ import React from "react";
 import { Component, Fragment } from "react";
 import Header from '../../common/header/Header';
 import './Home.css';
+import moviesData from "../../assets/moviesData";
 import ImageListComponent from "./ImageList";
 class Home extends Component {
     render() {
@@ -15,7 +16,7 @@ class Home extends Component {
                 </div>
                 {/* The single line image list */}
                 <div className="single-line-image-list">
-                    <ImageListComponent rowHeight={250} cols={6} wrap={'nowrap'}/>
+                    <ImageListComponent moviesData={moviesData} rowHeight={250} cols={6} wrap={'nowrap'}/>
                 </div>
             </Fragment>
         )
