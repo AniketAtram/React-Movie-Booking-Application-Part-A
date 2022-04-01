@@ -2,7 +2,10 @@ import React from 'react';
 import { ImageList, ImageListItem, ImageListItemBar, makeStyles } from '@material-ui/core';
 import moviesData from '../../assets/moviesData';
 
-// CSS FOR THE IMAGE LIST COMPONENTS
+
+function ImageListComponent(props)
+ {
+    // CSS FOR THE IMAGE LIST COMPONENTS
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -12,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.paper,
     },
     imageList: {
-      flexWrap: 'nowrap',
+      flexWrap: props.wrap,
       // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
       transform: 'translateZ(0)',
     },
@@ -26,13 +29,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-//   Image List component
-function ImageListComponent()
- {
     const classes=useStyles();
     return (
         <div className={classes.root}>
-          <ImageList className={classes.imageList} rowHeight={250} cols={6}>
+          <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
             {moviesData.map((item) => (
               <ImageListItem key={item.id}>
                 <img src={item.poster_url} alt={item.title} />
