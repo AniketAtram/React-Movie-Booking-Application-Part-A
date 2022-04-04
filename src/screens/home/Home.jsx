@@ -8,8 +8,12 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
-            movieList:moviesData
+            movieList: moviesData
         }
+    }
+
+    onClickHandler = () => {
+        alert('Redirecting to details page!');
     }
     render() {
         return (
@@ -27,7 +31,8 @@ class Home extends Component {
                 {/* flex-container */}
                 <div className="flex-container">
                     <div className="left-container flex-container-inner">
-                    <ImageListComponent moviesData={this.state.movieList} rowHeight={350} cols={4} margin={'15px'} cursor={'pointer'}/>
+                        <ImageListComponent moviesData={this.state.movieList} rowHeight={350} cols={4} margin={'15px'} 
+                        cursor={'pointer'} onClickHandler={this.onClickHandler} />
                     </div>
                     <div className="right-container flex-container-inner">
 

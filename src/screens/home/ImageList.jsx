@@ -26,7 +26,7 @@ function ImageListComponent(props) {
                 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.7) 100%)',
         },
         posterImg: {
-            width:'100%'
+            width: '100%'
         },
         imageListItem: {
             margin: props.margin,
@@ -39,8 +39,8 @@ function ImageListComponent(props) {
         <div className={classes.root}>
             <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
                 {props.moviesData.map((item) => (
-                    <ImageListItem key={item.id} className={classes.imageListItem}>
-                        <img src={item.poster_url} alt={item.title} className={classes.posterImg}/>
+                    <ImageListItem key={item.id} className={classes.imageListItem} onClick={props.onClickHandler} >
+                        <img src={item.poster_url} alt={item.title} className={classes.posterImg} />
                         <ImageListItemBar
                             title={item.title}
                             classes={{
