@@ -27,6 +27,10 @@ function ImageListComponent(props) {
         },
         posterImg: {
             width:'100%'
+        },
+        imageListItem: {
+            margin: props.margin,
+            cursor: props.cursor
         }
     }));
 
@@ -35,7 +39,7 @@ function ImageListComponent(props) {
         <div className={classes.root}>
             <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
                 {props.moviesData.map((item) => (
-                    <ImageListItem key={item.id}>
+                    <ImageListItem key={item.id} className={classes.imageListItem}>
                         <img src={item.poster_url} alt={item.title} className={classes.posterImg}/>
                         <ImageListItemBar
                             title={item.title}

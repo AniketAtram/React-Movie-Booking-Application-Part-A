@@ -5,6 +5,12 @@ import './Home.css';
 import moviesData from "../../assets/moviesData";
 import ImageListComponent from "./ImageList";
 class Home extends Component {
+    constructor() {
+        super();
+        this.state = {
+            movieList:moviesData
+        }
+    }
     render() {
         return (
             <Fragment>
@@ -16,7 +22,16 @@ class Home extends Component {
                 </div>
                 {/* The single line image list */}
                 <div className="single-line-image-list">
-                    <ImageListComponent moviesData={moviesData} rowHeight={250} cols={6} wrap={'nowrap'} />
+                    <ImageListComponent moviesData={this.state.movieList} rowHeight={250} cols={6} wrap={'nowrap'} />
+                </div>
+                {/* flex-container */}
+                <div className="flex-container">
+                    <div className="left-container flex-container-inner">
+                    <ImageListComponent moviesData={this.state.movieList} rowHeight={360} cols={4} margin={'15px'} cursor={'pointer'}/>
+                    </div>
+                    <div className="right-container flex-container-inner">
+
+                    </div>
                 </div>
             </Fragment>
         )
