@@ -27,7 +27,7 @@ class Home extends Component {
                 {/* flex-container */}
                 <div className="flex-container">
                     <div className="left-container flex-container-inner">
-                    <ImageListComponent moviesData={this.state.movieList} rowHeight={360} cols={4} margin={'15px'} cursor={'pointer'}/>
+                    <ImageListComponent moviesData={this.state.movieList} rowHeight={350} cols={4} margin={'15px'} cursor={'pointer'}/>
                     </div>
                     <div className="right-container flex-container-inner">
 
