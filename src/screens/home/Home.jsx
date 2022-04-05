@@ -26,17 +26,11 @@ class Home extends Component {
                 </div>
                 {/* The single line image list */}
                 <div className="single-line-image-list">
-                    <ImageListComponent moviesData={this.state.movieList} rowHeight={250} cols={6} wrap={'nowrap'} />
+                    <ImageListComponent moviesData={this.state.movieList} />
                 </div>
                 {/* flex-container */}
                 <div className="flex-container">
-                    <div className="left-container flex-container-inner">
-                        <ImageListComponent moviesData={this.state.movieList} rowHeight={350} cols={4} margin={'15px'} 
-                        cursor={'pointer'} onClickHandler={this.onClickHandler} />
-                    </div>
-                    <div className="right-container flex-container-inner">
-
-                    </div>
+                
                 </div>
             </Fragment>
         )

@@ -13,7 +13,7 @@ function ImageListComponent(props) {
             backgroundColor: theme.palette.background.paper,
         },
         imageList: {
-            flexWrap: props.wrap,
+            flexWrap: 'nowrap',
             // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
             transform: 'translateZ(0)',
         },
@@ -37,9 +37,9 @@ function ImageListComponent(props) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <ImageList className={classes.imageList} rowHeight={props.rowHeight} cols={props.cols}>
+            <ImageList className={classes.imageList} rowHeight={250} cols={6}>
                 {props.moviesData.map((item) => (
-                    <ImageListItem key={item.id} className={classes.imageListItem} onClick={props.onClickHandler} >
+                    <ImageListItem key={item.id} className={classes.imageListItem}>
                         <img src={item.poster_url} alt={item.title} className={classes.posterImg} />
                         <ImageListItemBar
                             title={item.title}
