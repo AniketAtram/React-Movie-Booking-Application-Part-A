@@ -4,7 +4,6 @@ import Header from '../../common/header/Header';
 import SubHeading from './HomeComponents/SubHeading/SubHeading';
 import SingleLineImageList from './HomeComponents/ImageList/SingleLineImageList';
 import FlexContent from './HomeComponents/FlexContent/FlexContent';
-import './Home.css';
 import moviesData from "../../assets/moviesData";
 class Home extends Component {
     constructor() {
@@ -27,8 +26,8 @@ class Home extends Component {
                 <SingleLineImageList />
 
                 {/* flex-container */}
-                <div className="flex-container">
-                    {/* <FlexContent /> */}
+                <div className="flex-container" style={{display:"flex"}}>
+                    <FlexContent />
                 </div>
             </Fragment>
         )

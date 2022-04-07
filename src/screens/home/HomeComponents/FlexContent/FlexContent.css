@@ -1,0 +1,11 @@
+.left-container {
+    width: 76vw;
+    margin: 16px;
+}
+
+.right-container {
+    padding-top: 20px;
+    margin:16px;
+    width: 24vw;
+    /* height: 100vh; */
+}
