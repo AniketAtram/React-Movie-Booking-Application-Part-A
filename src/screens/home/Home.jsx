@@ -20,7 +20,7 @@ class Home extends Component {
                 <Header />
 
                 {/* Sub heading under the header */}
-                <SubHeading />
+                <SubHeading subHeading={"Upcoming Movies"} />
 
                 {/* Single line image list of upcoming movies */}
                 <SingleLineImageList />
