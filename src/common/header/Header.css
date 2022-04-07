@@ -13,7 +13,7 @@
 }
 @keyframes rotation {
     from{
-        transform: rotateY(0deg);
+        transform: rotateY(1deg);
     }
     to{
         transform: rotateY(359deg);
