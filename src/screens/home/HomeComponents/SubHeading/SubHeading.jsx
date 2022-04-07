@@ -4,10 +4,11 @@ import './SubHeading.css';
 
 class SubHeading extends Component {
     render() {
+        console.log(this.props);
         return (
             <Fragment>
                 <div className="upcoming-movies-heading" key="sub-heading">
-                    <span>Upcoming Movies</span>
+                    <span>{this.props.subHeading}</span>
                 </div>
             </Fragment>
         )
