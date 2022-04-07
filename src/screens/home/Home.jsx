@@ -24,7 +24,7 @@ class Home extends Component {
                 <SubHeading />
 
                 {/* Single line image list of upcoming movies */}
-                {/* <SingleLineImageList /> */}
+                <SingleLineImageList />
 
                 {/* flex-container */}
                 <div className="flex-container">
