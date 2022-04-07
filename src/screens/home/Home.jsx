@@ -5,13 +5,9 @@ import SubHeading from './HomeComponents/SubHeading/SubHeading';
 import SingleLineImageList from './HomeComponents/ImageList/SingleLineImageList';
 import FlexContent from './HomeComponents/FlexContent/FlexContent';
 import moviesData from "../../assets/moviesData";
+import genres from "../../assets/genre";
+import artists from "../../assets/artists";
 class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-            movieList: moviesData
-        }
-    }
 
     render() {
         return (
@@ -23,11 +19,11 @@ class Home extends Component {
                 <SubHeading subHeading={"Upcoming Movies"} />
 
                 {/* Single line image list of upcoming movies */}
-                <SingleLineImageList moviesData={this.state.movieList} />
+                <SingleLineImageList moviesData={moviesData} />
 
                 {/* flex-container */}
                 <div className="flex-container" style={{display:"flex"}}>
-                    <FlexContent />
+                    <FlexContent moviesData={moviesData} artists={artists} genres={genres} />
                 </div>
             </Fragment>
         )

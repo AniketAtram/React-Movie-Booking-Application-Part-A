@@ -17,10 +17,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import ListItemText from "@material-ui/core/ListItemText";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import moviesData from "../../../../assets/moviesData";
-import genres from "../../../../assets/genre";
-import artists from "../../../../assets/artists";
-import "./FlexContent.css";
+
 const styles = (theme) => ({
   root: {
     display: "flex",
@@ -74,7 +71,7 @@ class FlexContent extends Component {
         <div className="left-container">
           <div className={classes.root}>
             <ImageList className={classes.imageList} rowHeight={360} cols={4}>
-              {moviesData.map((item) => (
+              {this.props.moviesData.map((item) => (
                 <ImageListItem
                   key={item.poster_url}
                   className={classes.imageListItem}
@@ -131,7 +128,7 @@ class FlexContent extends Component {
                   onChange={this.genreSelectHandler}
                 >
                   <MenuItem value="0">None</MenuItem>
-                  {genres.map((genre) => (
+                  {this.props.genres.map((genre) => (
                     <MenuItem key={genre.id} value={genre.name}>
                       <Checkbox
                         checked={this.state.genres.indexOf(genre.name) > -1}
@@ -154,7 +151,7 @@ class FlexContent extends Component {
                   onChange={this.artistSelectHandler}
                 >
                   <MenuItem value="0">None</MenuItem>
-                  {artists.map((artist) => (
+                  {this.props.artists.map((artist) => (
                     <MenuItem
                       key={artist.id}
                       value={artist.first_name + " " + artist.last_name}
