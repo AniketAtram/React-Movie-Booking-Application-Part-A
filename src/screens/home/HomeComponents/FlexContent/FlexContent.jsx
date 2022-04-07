@@ -79,7 +79,7 @@ class FlexContent extends Component {
                   key={item.poster_url}
                   className={classes.imageListItem}
                 >
-                  <Link to={`/Detail/${item.id}`} state={{id:item.id}}>
+                  <Link to={`/details/${item.id}`} state={{id:item.id}}>
                     <img
                       src={item.poster_url}
                       alt={item.title}
