@@ -23,7 +23,7 @@ class Home extends Component {
                 <SubHeading subHeading={"Upcoming Movies"} />
 
                 {/* Single line image list of upcoming movies */}
-                <SingleLineImageList />
+                <SingleLineImageList moviesData={this.state.movieList} />
 
                 {/* flex-container */}
                 <div className="flex-container" style={{display:"flex"}}>
