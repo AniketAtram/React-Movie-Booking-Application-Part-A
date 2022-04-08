@@ -17,7 +17,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import ListItemText from "@material-ui/core/ListItemText";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
+import './FlexContent.css';
 const styles = (theme) => ({
   root: {
     display: "flex",
@@ -113,7 +113,7 @@ class FlexContent extends Component {
 
               <FormControl className={classes.formControl}>
                 <InputLabel htmlFor="movieName">Movie Name</InputLabel>
-                <Input id="movieName" onChange={this.movieNameChangeHandler} />
+                <Input id="movieName" onChange={this.inputChangeHandler} />
               </FormControl>
 
               <FormControl className={classes.formControl}>
@@ -125,7 +125,7 @@ class FlexContent extends Component {
                   input={<Input id="select-multiple-checkbox-genre" />}
                   renderValue={(selected) => selected.join(",")}
                   value={this.state.genres}
-                  onChange={this.genreSelectHandler}
+                  onChange={this.inputChangeHandler}
                 >
                   <MenuItem value="0">None</MenuItem>
                   {this.props.genres.map((genre) => (
@@ -148,7 +148,7 @@ class FlexContent extends Component {
                   input={<Input id="select-multiple-checkbox" />}
                   renderValue={(selected) => selected.join(",")}
                   value={this.state.artists}
-                  onChange={this.artistSelectHandler}
+                  onChange={this.inputChangeHandler}
                 >
                   <MenuItem value="0">None</MenuItem>
                   {this.props.artists.map((artist) => (
