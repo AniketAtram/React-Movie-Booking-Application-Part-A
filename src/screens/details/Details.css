@@ -4,6 +4,7 @@
     right: 100px;
     bottom: 45px;
 }
+
 .link {
     text-decoration: none;
     color: black;
@@ -34,6 +35,6 @@
 }
 
 .details-right-container {
-    width:20%;
+    width: 20%;
     margin: 16px;
 }

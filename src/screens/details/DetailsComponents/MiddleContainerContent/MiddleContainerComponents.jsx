@@ -19,31 +19,31 @@ export default class MiddleContent extends Component {
                 </div>
 
                 <div>
-                    <Typography className="typography-text"  gutterBottom>
+                    <Typography className="typography-text" gutterBottom>
                         <b>Duration:</b> {this.props.duration}
                     </Typography>
                 </div>
 
                 <div>
-                    <Typography className="typography-text"  gutterBottom>
+                    <Typography className="typography-text" gutterBottom>
                         <b>Release Date:</b> {new Date(this.props.releaseDate).toDateString()}
                     </Typography>
                 </div>
 
                 <div>
-                    <Typography className="typography-text"  gutterBottom>
+                    <Typography className="typography-text" gutterBottom>
                         <b>Rating:</b> {this.props.rating}
                     </Typography>
                 </div>
 
                 <div className="plot">
-                    <Typography className="typography-text"  gutterBottom>
+                    <Typography className="typography-text" gutterBottom>
                         <b>Plot:</b> {this.props.plot}
                     </Typography>
                 </div>
 
                 <div>
-                    <Typography className="typography-text"  gutterBottom>
+                    <Typography className="typography-text" gutterBottom>
                         <b>Trailer:</b>
                     </Typography>
                 </div>
