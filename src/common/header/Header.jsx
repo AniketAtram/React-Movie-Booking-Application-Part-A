@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <Fragment>
                 <div className="header">
-                    <img src={logo} alt='website-logo' key="website-logo" className="website-logo"/>
+                    <img src={logo} alt='website-logo' key="website-logo" className="website-logo" />
                 </div>
             </Fragment>
         )

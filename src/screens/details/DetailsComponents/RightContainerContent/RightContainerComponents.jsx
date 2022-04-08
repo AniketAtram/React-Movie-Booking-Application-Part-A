@@ -1,8 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
+import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
+import Rate from '../Ratings/Rate';
+import './RightContainerComponents.css'
 
 const styles = (theme) => ({
     root: {
@@ -18,35 +21,46 @@ const styles = (theme) => ({
     },
     title: {
         color: "#FFFFF",
-        fontWeight: "bold",
+        fontWeight: "medium",
+        fontSize: "12px"
     },
     titleBar: {
         background:
             "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.5) 100%)",
     },
-    imageListImage: {
-        minheight: "250px",
-        maxheight: "250px",
+    imageListItem: {
+        minwidth: "350px",
+        cursor: "pointer"
+
     },
 });
 
-class SingleLineImageList extends Component {
+
+class RightContent extends Component {
     render() {
         const { classes } = this.props;
-
         return (
             <Fragment>
-                <div className={classes.root}>
-                    <ImageList className={classes.imageList} rowHeight={250} cols={6}>
-                        {this.props.moviesData.map((item) => (
-                            <ImageListItem key={item.poster_url}>
+                <Typography>
+                    <b>Rate this movie:</b>
+                </Typography>
+                {/*Star ratings goes here*/}
+                <div>
+                    <Rate />
+                </div>
+                <Typography>
+                    <b>Artists:</b>
+                </Typography>
+                <div className="details-artist-image-list">
+                    <ImageList className={classes.imageList} rowHeight={180} cols={2}>
+                        {this.props.artists.map((item) => (
+                            <ImageListItem key={item.id} className={classes.imageListItem}>
                                 <img
-                                    src={item.poster_url}
+                                    src={item.profile_url}
                                     alt={item.title}
-                                    className={classes.imageListImage}
                                 />
                                 <ImageListItemBar
-                                    title={item.title}
+                                    title={`${item.first_name} ${item.last_name}`}
                                     classes={{
                                         root: classes.titleBar,
                                         title: classes.title,
@@ -57,8 +71,8 @@ class SingleLineImageList extends Component {
                     </ImageList>
                 </div>
             </Fragment>
-        );
+        )
     }
 }
 
-export default withStyles(styles)(SingleLineImageList);
+export default withStyles(styles)(RightContent);
