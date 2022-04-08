@@ -1,0 +1,39 @@
+.header-button {
+    float: right;
+    position: absolute;
+    right: 100px;
+    bottom: 45px;
+}
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.back-to-home-button {
+    margin: 8px auto 0 24px;
+}
+
+.index-container {
+    text-align: left;
+}
+
+.deatils-flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.details-left-container {
+    width: 20%;
+    text-align: center;
+    margin: 16px;
+}
+
+.details-middle-container {
+    width: 60%;
+    margin: 16px;
+}
+
+.details-right-container {
+    width:20%;
+    margin: 16px;
+}
