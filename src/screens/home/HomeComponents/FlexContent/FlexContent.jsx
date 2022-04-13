@@ -114,7 +114,7 @@ class FlexContent extends Component {
 
                             <FormControl className={classes.formControl}>
                                 <InputLabel htmlFor="movieName">Movie Name</InputLabel>
-                                <Input id="movieName" onChange={this.inputChangeHandler} />
+                                <Input id="movieName" />
                             </FormControl>
 
                             <FormControl className={classes.formControl}>
@@ -126,7 +126,6 @@ class FlexContent extends Component {
                                     input={<Input id="select-multiple-checkbox-genre" />}
                                     renderValue={(selected) => selected.join(",")}
                                     value={this.state.genres}
-                                    onChange={this.inputChangeHandler}
                                 >
                                     <MenuItem value="0">None</MenuItem>
                                     {this.props.genres.map((genre) => (
@@ -149,7 +148,6 @@ class FlexContent extends Component {
                                     input={<Input id="select-multiple-checkbox" />}
                                     renderValue={(selected) => selected.join(",")}
                                     value={this.state.artists}
-                                    onChange={this.inputChangeHandler}
                                 >
                                     <MenuItem value="0">None</MenuItem>
                                     {this.props.artists.map((artist) => (
